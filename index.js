@@ -19,7 +19,8 @@ function createGLShell(options) {
     var canvas = document.createElement("canvas")
     
     //Try initializing WebGL
-    var gl = canvas.getContext("webgl", contextOptions) || 
+    var gl = canvas.getContext("webgl2", contextOptions) || 
+             canvas.getContext("webgl", contextOptions) || 
              canvas.getContext("experimental-webgl", contextOptions)
     if(!gl) {
       shell.emit("gl-error", new Error("Unable to initialize WebGL"))
