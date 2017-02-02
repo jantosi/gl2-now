@@ -1,8 +1,15 @@
-gl-now
+gl2-now
 ======
-Create a WebGL context right now!
+Create a WebGL(2) context right now!
 
-This module is an extension of [game-shell](https://github.com/mikolalysenko/game-shell) that creates a WebGL enabled canvas and adds it to the specified container.
+This is a _very minor_ fork of [gl-now](https://github.com/stackgl/gl-now). 
+I created it because I wanted to persist a single monkeypatched change. 
+Playing around with WebGL requires asking the browser for different WebGL context ("webgl2", not "webgl"), and so, this fork 
+was born. All the credits go to Mikola Lysenko, the original author.
+
+gl-now is an extension of 
+[game-shell](https://github.com/mikolalysenko/game-shell) that 
+creates a WebGL enabled canvas and adds it to the specified container.
 
 ## Example
 
@@ -10,7 +17,7 @@ This module is an extension of [game-shell](https://github.com/mikolalysenko/gam
 
 ```javascript
 //Initialize shell
-var shell = require("gl-now")()
+var shell = require("gl2-now")() //
 
 shell.on("gl-init", function() {
   var gl = shell.gl
@@ -72,11 +79,11 @@ Result:
 
 ## Install
 
-    npm install gl-now
+    npm install gl2-now
     
 # API
 
-### `var shell = require("gl-now")([options])`
+### `var shell = require("gl2-now")([options])`
 
 Options is an object that takes the same fields as in [game-shell](https://github.com/mikolalysenko/game-shell#var-shell--requiregame-shelloptions) with the following additions:
 
